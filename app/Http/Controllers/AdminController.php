@@ -7,12 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    function index()
-    {
-        echo "Halaman Utama";
-        echo "<h1>" . Auth::user()->name . "</h1>";
-        echo "<a href='logout'>Logout</a>";
-    }
     function admin()
     {
         echo "Halaman Admin";
