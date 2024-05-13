@@ -58,59 +58,73 @@ body {
 }
 
 .regis-nama {
-  border: 1px solid #ccc;
-  background: #D9D9D9;
-  padding: 12px 20px;
-  position: absolute;
-  font-weight: 400;
-  font-size: 20px;
-  margin-top: 146px;
-  margin-left: 46px;
-  height: 62px;
-  width: 466px;
-  box-sizing: border-box;
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 120px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
 }
 
-.regis-email {
-  border: 1px solid #ccc;
-  background: #D9D9D9;
-  padding: 12px 20px;
-  position: absolute;
-  font-weight: 400;
-  font-size: 20px;
-  margin-top: 243px;
-  margin-left: 46px;
-  height: 62px;
-  width: 466px;
-  box-sizing: border-box;
+  .regis-email {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 210px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
 }
 
-.regis-pw {
-  border: 1px solid #ccc;
-  background: #D9D9D9;
-  padding: 12px 20px;
-  position: absolute;
-  font-weight: 400;
-  font-size: 20px;
-  margin-top: 340px;
-  margin-left: 46px;
-  height: 62px;
-  width: 466px;
-  box-sizing: border-box;
+  .regis-pw {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 300px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
 }
 
-.bt-signup {
-  border: none;
-  font-weight: 400;
-  font-size: 20px;
-  color: #FFFFFF;
-  background: #4DE89D;
-  margin-top: 448px;
-  margin-left: 156px;
-  border-radius: 35px;
-  height: 60px;
-  width: 246px;
-  box-sizing: border-box;
+  .regis-notelp {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 390px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
+}
+
+  .bt-signup {
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #4DE89D;
+    margin-top: 470px;
+    margin-left: 156px;
+    border-radius: 35px;
+    height: 60px;
+    width: 246px;
+    box-sizing: border-box;
 }
 
 .bt-signup:hover {
