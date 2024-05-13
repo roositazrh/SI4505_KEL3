@@ -3,12 +3,22 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
-class User extends Authenticatable
+class User extends Authenticatable //implements FilamentUser
 {
+    public function hasrole($role)
+    {
+        return User::where('role', $role)->get();
+    }
+
     use HasFactory, Notifiable;
 
     /**
@@ -20,6 +30,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'no_telp',
         'role',
     ];
 
@@ -45,4 +56,34 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // public function canAccessPanel(Panel $panel): bool
+    // {
+    //     $user = Auth::user();
+    //     $roles = $user->getRoleNames();
+
+    //     if($panel->getId() === 'admin' && $roles->contains('admin')) {
+    //         return true;
+    //     }
+    //     elseif($panel->getId() === 'koperasi' && $roles->contains('koperasi')) {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
+
+    // public function canAccessPanel(Panel $panel): bool
+    // {
+    //     if ($panel->getId() === 'admin') {
+    //         return str_ends_with($this->email, '@admin.com') && $this->hasVerifiedEmail();
+    //     }
+    //     elseif($panel->getId() === 'koperasi') {
+    //         return str_ends_with($this->email, '@koperasi.com') && $this->hasVerifiedEmail();
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
+
 }

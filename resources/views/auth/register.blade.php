@@ -25,6 +25,7 @@
         <input type="nama" class="regis-nama" name="name" placeholder="Full Name">
         <input type="email" class="regis-email" name="email" placeholder="Email">
         <input type="password" class="regis-pw" name="password" placeholder="Password">
+        <input type="no_telp" class="regis-notelp" name="no_telp" placeholder="Phone Number">
         <button name="submit" type="submit" class="bt-signup"> Sign Up</button>
       </form>
     </div>

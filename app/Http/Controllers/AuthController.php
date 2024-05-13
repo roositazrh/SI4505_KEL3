@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+
+    function landing()
+    {
+        return view('landing');
+    }
+
     function index()
     {
         return view('auth.login');
@@ -63,6 +69,7 @@ class AuthController extends Controller
             [
                 'name' => 'required',
                 'email' => 'required | unique:users',
+                'no_telp' => 'required',
                 'password' => 'required',
             ],
             [
@@ -70,6 +77,7 @@ class AuthController extends Controller
                 'email.required' => 'Email must be at least',
                 'email.unique' => 'Email sudah digunakan',
                 'password.required' => 'Password must be at least',
+                'no_telp' => 'Phone must be at least',
             ]
         );
 
@@ -77,6 +85,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
+            'no_telp' => $request->no_telp,
             'role' => 'user'
         ];
         User::create($data);
