@@ -21,8 +21,6 @@ class AdminController extends Controller
     }
     function user()
     {
-        echo "Halaman User";
-        echo "<h1>" . Auth::user()->name . "</h1>";
-        echo "<a href='/logout'>Logout</a>";
+        return view('home');
     }
 }
