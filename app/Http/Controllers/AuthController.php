@@ -13,7 +13,7 @@ class AuthController extends Controller
 
     function landing()
     {
-        return view('landing');
+        return view('home');
     }
 
     function index()

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'landing']);
@@ -20,5 +21,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', [AdminController::class, 'user'])->middleware('hakAkses:user');
     Route::get('/logout', [AuthController::class, 'logout']);
 });
+
+Route::post('/auth/logout', [LogoutController::class, 'logout'])->name('filament.admin.auth.logout');
+Route::post('/auth/logout', [LogoutController::class, 'logout'])->name('filament.koperasi.auth.logout');
 
 
