@@ -664,7 +664,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <div class="section-title">
+            <div class="{{ Storage::url() }}">
               <h2>Peta Wilayah (SPRINT 3) GA PEDE JAN DIAPA APAIN DULU</h2>
               <p>Ini Sprint 3, sementara ini dulu. ini nyoba doang.</p>
             </div>
