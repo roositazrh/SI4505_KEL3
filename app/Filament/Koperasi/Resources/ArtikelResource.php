@@ -45,10 +45,8 @@ class ArtikelResource extends Resource
                 TextInput::make('author')
                     ->required()
                     ->maxLength(255),
-                FileUpload::make('thumbnail')
-                    ->required()
-                    ->image()->disk('public')
-                    ->columnSpanFull(),
+                TextInput::make('thumbnail')
+                    ->required(),
                 DateTimePicker::make('tanggal_publish')
                     ->required(),
                 RichEditor::make('body')
@@ -79,7 +77,7 @@ class ArtikelResource extends Resource
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-                ImageColumn::make('thumbnail'),
+                TextColumn::make('thumbnail'),
                 TextColumn::make('tanggal_publish')
                     ->dateTime()
 

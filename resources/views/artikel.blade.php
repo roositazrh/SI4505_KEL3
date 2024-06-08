@@ -98,11 +98,11 @@
             @foreach ($artikels as $artikel)
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-wrap">
-                <img src="{{ Storage::url($artikels->thumbnail) }}" class="img-fluid" alt="Thumbnail">
+                <img href="{{ $artikels->thumbnail }}" class="img-fluid" alt="Thumbnail">
                 <div class="portfolio-info">
                   <h4>{{ $artikels->title }}</h4>
                   <div class="portfolio-links">
-                    <a href="{{ Storage::url($artikels->thumbnail) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                    <a href="{{ $artikels->thumbnail }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
                     <a href="{{route('detailartikel')}}" title="More Details"><i class="bx bx-link"></i></a>
                   </div>
                 </div>
