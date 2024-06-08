@@ -25,6 +25,17 @@
   <link href="{{asset('land-bt/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{asset('land-bt/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
+  <!-- Leaflet map -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+        #map { height: 400px; } /* ukuran map */
+    </style>
+
   <!-- Template Main CSS File -->
   <link href="{{asset('land-bt/assets/css/style.css')}}" rel="stylesheet">
 
@@ -44,7 +55,7 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <h1 class="text-light"><a href="index.html"><span>AGRIMAP</span></a></h1>
+          <h1 class="text-light"><a href="{{route('landing')}}"><span>AGRIMAP</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -52,29 +63,12 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">Profil Desa</a></li>
-            <li><a class="nav-link scrollto" href="#services">Galeri</a></li>
-            <li><a class="nav-link scrollto " href="#portfolio">Lapak Desa</a></li>
-            <li><a class="nav-link scrollto" href="#team">Pengaduan</a></li>
-            <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li> -->
-            <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-            <li><a class="getstarted scrollto" href="#about">Login</a></li>
+            <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
+            <li><a class="nav-link scrollto " href="#portfolio">Galeri</a></li>
+            <li><a class="nav-link" href="{{route('pengaduan')}}">Pengaduan</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Peta</a></li>
+            <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
+            <li><a class="getstarted scrollto" href="{{route('login')}}">Login</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -269,8 +263,8 @@
               <div class="col-md-6 d-flex align-items-stretch">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                   <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
-                  <h4><a href="">Lapak Desa</a></h4>
-                  <p>memungkinkan penduduk setempat untuk mempromosikan produk-produk lokal mereka, seperti hasil pertanian, kerajinan tangan, atau makanan khas desa</p>
+                  <h4><a href="{{route('artikel')}}">Artikel Desa</a></h4>
+                  <p>memungkinkan penduduk setempat untuk memberitakan produk-produk lokal mereka, seperti hasil pertanian, kerajinan tangan, atau makanan khas desa</p>
                 </div>
               </div>
 
@@ -285,7 +279,7 @@
               <div class="col-md-6 d-flex align-items-stretch mt-4">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
                   <!-- <div class="icon"><i class="bx bx-tachometer"></i></div> -->
-                  <h4><a href="">Lapak Pengaduan</a></h4>
+                  <h4><a href="{{route('pengaduan')}}">Lapak Pengaduan</a></h4>
                   <p>memungkinkan penduduk setempat untuk melaporkan masalah lingkungan atau infrastruktur, yang kemudian dapat diatasi oleh pemerintah atau organisasi terkait.</p>
                 </div>
               </div>
@@ -310,7 +304,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-left">
-          <h2>Plan Your Visit</h2>
+          <h2>Galeri Desa</h2>
           <p>Tingkatkan pendapatan dari pariwisata lokal sambil berkenal pada keindahan alam dan budaya desa</p>
         </div>
 
@@ -651,7 +645,45 @@
           </div>
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+            
+            <!-- Div for the map -->
+    <div id="map"></div>
+            <!-- Leaflet JS code -->
+            <script>
+                var map = L.map('map').setView([51.505, -0.09], 13);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                L.marker([-6.983052733181229, 107.63164206530367]).addTo(map)
+                    .bindPopup('Kantor Desa Bojongsoang')
+                    .openPopup();
+
+                L.marker([-6.974774405406255, 107.63958990948215]).addTo(map)
+                    .bindPopup('Kantor Desa Lengkong')
+                    .openPopup();
+
+                L.marker([-7.000795164946833, 107.64788692112525]).addTo(map)
+                    .bindPopup('Kantor Desa Bojongsari')
+                    .openPopup();
+
+                L.marker([-6.967001348033594, 107.63735957879616]).addTo(map)
+                    .bindPopup('Kantor Desa Cipagalo')
+                    .openPopup();
+                
+                L.marker([-6.982947614005201, 107.69391788064658]).addTo(map)
+                    .bindPopup('Kantor Desa Tegalluar')
+                    .openPopup();
+                
+                L.marker([-6.976148501732319, 107.67153939088546]).addTo(map)
+                    .bindPopup('Kantor Desa Buah Batu')
+                    .openPopup();
+
+                
+            </script>
+
+            <!--iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe-->
             <!-- <div class="info mt-4">
               <i class="bi bi-geo-alt"></i>
               <h4>Location:</h4>
@@ -675,7 +707,7 @@
             </div>
 <br><br><br><br>
 
-            <h3>Lapak Pengaduan</h3>
+            <!-- <h3>Lapak Pengaduan</h3>
             <form action="{{asset('land-bt/forms/contact.php')}}" method="post" role="form" class="php-email-form mt-4">
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -699,7 +731,7 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Contact Section -->
@@ -728,20 +760,17 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Profil Desa</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Galeri</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Lapak Desa</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Galeri</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('artikel')}}">Artikel</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Layanan Kami</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Lapak Desa</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Lapak Pengaduan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Wisata Desa</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Peta Sumber daya</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('pengaduan')}}">Lapak Pengaduan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Peta Sumber daya</a></li>
               <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
             </ul>
           </div>

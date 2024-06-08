@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins';
+  background-image: url("../img/bandung_thumbnail_1.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.content-wrapper {
+  background-color: #FFFFFF;
+  box-shadow: -10px 20px 3px rgba(0, 0, 0, 0.55);
+  display: flex;
+  width: 1116px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50% , -50%)
+}
+
+.container-1{
+  width: 558px;
+  height: 542px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.title-1 {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 121px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  height: 75px;
+  width: 317px;
+  text-align: center;
+}
+
+.title-1-desc {
+  position: absolute;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 98px;
+  margin-left: 139px;
+  height: 18px;
+  width: auto;
+
+}
+
+.regis-nama {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 120px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
+}
+
+  .regis-email {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 210px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
+}
+
+  .regis-pw {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 300px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
+}
+
+  .regis-notelp {
+    border: 1px solid #ccc;
+    background: #D9D9D9;
+    padding: 12px 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 390px;
+    margin-left: 46px;
+    height: 62px;
+    width: 466px;
+    box-sizing: border-box;
+}
+
+  .bt-signup {
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: #4DE89D;
+    margin-top: 470px;
+    margin-left: 156px;
+    border-radius: 35px;
+    height: 60px;
+    width: 246px;
+    box-sizing: border-box;
+}
+
+.bt-signup:hover {
+    background-color: #3bb67b;
+}
+
+.container-2{
+  width: 558px;
+  height: 542px;
+  background: linear-gradient(205.97deg, #1FDB54 11.8%, #185839 86.2%);
+}
+
+.title-2 {
+  position: absolute;
+  text-align: center;
+  margin-top: 171px;
+  margin-left: 55px;
+  font-weight: 700;
+  font-size: 40px;
+  color: #FFFFFF;
+  height: 60px;
+  width: 453px;
+  box-sizing: border-box;
+}
+
+.title-2-desc {
+  position: absolute;
+  text-align: center;
+  margin-top: 231px;
+  margin-left: 113px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  height: 48px;
+  width: 334px;
+  box-sizing: border-box;
+}
+
+.bt-signin {
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  background: none;
+  margin-top: 303px;
+  margin-left: 159px;
+  padding: 15px 0 0 0;
+  height: 60px;
+  width: 246px;
+  border-radius: 35px;
+  box-sizing: border-box;
+}
+
+.text-bt-signin {
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.bt-signin:hover {
+  background: #ffffff3a;
+}
