@@ -89,8 +89,6 @@
                 <li><a href="#">Drop Down 4</a></li>
               </ul>
             </li> -->
-            <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-            <li><a class="getstarted scrollto" href="#about">Login</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -263,7 +261,7 @@
         <div class="text-center" data-aos="zoom-in">
           <h3>Peta Wilayah</h3>
           <p> Temukan lokasi sumber daya alam, seperti hutan, sungai, dan lahan pertanian, serta informasi terkait keberlanjutan dan ketersediaannya.</p>
-          <a class="cta-btn" href="#">Temukan (Scroll Ke Bawah)</a>
+          <a class="cta-btn" href="#contact">Temukan (Scroll Ke Bawah)</a>
         </div>
 
       </div>
@@ -313,7 +311,7 @@
               <div class="col-md-6 d-flex align-items-stretch mt-4">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
                   <!-- <div class="icon"><i class="bx bx-world"></i></div> -->
-                  <h4><a href="">Peta penyediaan sumber daya alam</a></h4>
+                  <h4><a href="#contact">Peta penyediaan sumber daya alam</a></h4>
                   <p>memungkinkan pengguna untuk menemukan lokasi sumber daya alam, seperti hutan, sungai, dan lahan pertanian, serta informasi terkait keberlanjutan dan ketersediaannya.</p>
                 </div>
               </div>
@@ -664,7 +662,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <div class="{{ Storage::url() }}">
+            <div class="peta">
               <h2>Peta Wilayah (SPRINT 3) GA PEDE JAN DIAPA APAIN DULU</h2>
               <p>Ini Sprint 3, sementara ini dulu. ini nyoba doang.</p>
             </div>
