@@ -55,6 +55,7 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
+
           <h1 class="text-light"><a href="{{route('landing')}}"><span>AGRIMAP</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -63,12 +64,33 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+
             <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
             <li><a class="nav-link scrollto " href="#portfolio">Galeri</a></li>
             <li><a class="nav-link" href="{{route('pengaduan')}}">Pengaduan</a></li>
             <li><a class="nav-link scrollto" href="#contact">Peta</a></li>
             <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
             <li><a class="getstarted scrollto" href="{{route('login')}}">Login</a></li>
+
+            <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li> -->
+            <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+            <li><a class="getstarted scrollto" href="#about">Login</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -263,8 +285,10 @@
               <div class="col-md-6 d-flex align-items-stretch">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                   <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
+
                   <h4><a href="{{route('artikel')}}">Artikel Desa</a></h4>
                   <p>memungkinkan penduduk setempat untuk memberitakan produk-produk lokal mereka, seperti hasil pertanian, kerajinan tangan, atau makanan khas desa</p>
+
                 </div>
               </div>
 
@@ -279,7 +303,9 @@
               <div class="col-md-6 d-flex align-items-stretch mt-4">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
                   <!-- <div class="icon"><i class="bx bx-tachometer"></i></div> -->
+
                   <h4><a href="{{route('pengaduan')}}">Lapak Pengaduan</a></h4>
+
                   <p>memungkinkan penduduk setempat untuk melaporkan masalah lingkungan atau infrastruktur, yang kemudian dapat diatasi oleh pemerintah atau organisasi terkait.</p>
                 </div>
               </div>
@@ -707,7 +733,9 @@
             </div>
 <br><br><br><br>
 
+
             <!-- <h3>Lapak Pengaduan</h3>
+
             <form action="{{asset('land-bt/forms/contact.php')}}" method="post" role="form" class="php-email-form mt-4">
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -731,6 +759,7 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
+
         </div> -->
 
       </div>
@@ -760,6 +789,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              
               <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Galeri</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('artikel')}}">Artikel</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
@@ -769,8 +799,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Layanan Kami</h4>
             <ul>
+
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('pengaduan')}}">Lapak Pengaduan</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">Peta Sumber daya</a></li>
+
               <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
             </ul>
           </div>
