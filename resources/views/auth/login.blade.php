@@ -13,7 +13,7 @@
         Login
       </div>
       <div class="title-1-desc">
-        Masuk kedalam akun anda
+        Masuk ke dalam akun admin
       </div>
       @if ($errors->any())
       <div class="alert alert-danger">
