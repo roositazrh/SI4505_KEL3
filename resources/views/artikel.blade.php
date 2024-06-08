@@ -95,36 +95,22 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{asset('land-bt/assets/img/portfolio/1.jpg')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Desa Durian</h4>
-                <p>Desa dengan 1000 Durian</p>
-                <div class="portfolio-links">
-                  <a href="{{asset('land-bt/assets/img/portfolio/1.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="{{route('detailartikel')}}" title="More Details"><i class="bx bx-link"></i></a>
+            @foreach ($artikels as $artikel)
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src="{{ Storage::url($artikels->thumbnail) }}" class="img-fluid" alt="Thumbnail">
+                <div class="portfolio-info">
+                  <h4>{{ $artikels->title }}</h4>
+                  <div class="portfolio-links">
+                    <a href="{{ Storage::url($artikels->thumbnail) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                    <a href="{{route('detailartikel')}}" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{{asset('land-bt/assets/img/portfolio/2.png')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Desa Sukaharja</h4>
-                <p>Desa dengan banyak sekali pemandangan alam</p>
-                <div class="portfolio-links">
-                  <a href="{{asset('land-bt/assets/img/portfolio/2.png')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="{{route('detailartikel')}}" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+            @endforeach
         </div>
+
 
       </div>
     </section><!-- End Portfolio Section -->
@@ -154,7 +140,7 @@
         <h4>Useful Links</h4>
         <ul>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-          
+
           <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Galeri</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="{{route('artikel')}}">Artikel</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
