@@ -16,7 +16,29 @@ class AuthController extends Controller
         return view('home');
     }
 
+    function pengaduan()
+    {
+        return view('pengaduan');
+    }
+
+    function artikel()
+    {
+        return view('artikel');
+    }
+
+    function detailartikel()
+    {
+        return view('detailartikel');
+    }
+
+    
+    function detailgaleri()
+    {
+        return view('detailgaleri');
+    }
+
     function index()
+
     {
         return view('auth.login');
     }
