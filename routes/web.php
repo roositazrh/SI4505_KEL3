@@ -5,9 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AuthController::class, 'landing']);
-
 Route::middleware(['guest'])->group(function(){
+    Route::get('/', [AuthController::class, 'landing']);
     Route::get('/login', [AuthController::class, 'index'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/register', [AuthController::class, 'register'])->name('register');

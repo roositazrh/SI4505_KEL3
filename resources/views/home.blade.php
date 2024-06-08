@@ -25,6 +25,17 @@
   <link href="{{asset('land-bt/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{asset('land-bt/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
+  <!-- Leaflet map -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+        #map { height: 400px; } /* ukuran map */
+    </style>
+
   <!-- Template Main CSS File -->
   <link href="{{asset('land-bt/assets/css/style.css')}}" rel="stylesheet">
 
@@ -74,8 +85,7 @@
               </ul>
             </li> -->
             <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-            <li><a class="getstarted scrollto" href="{{ route('login') }}">Login</a></li>
-            <li><a class="logout scrollto" href="/logout">Logout</a></li>
+            <li><a class="getstarted scrollto" href="#about">Login</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -311,7 +321,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-left">
-          <h2>Plan Your Visit</h2>
+          <h2>Galeri Desa</h2>
           <p>Tingkatkan pendapatan dari pariwisata lokal sambil berkenal pada keindahan alam dan budaya desa</p>
         </div>
 
@@ -652,7 +662,45 @@
           </div>
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+            
+            <!-- Div for the map -->
+    <div id="map"></div>
+            <!-- Leaflet JS code -->
+            <script>
+                var map = L.map('map').setView([51.505, -0.09], 13);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                L.marker([-6.983052733181229, 107.63164206530367]).addTo(map)
+                    .bindPopup('Kantor Desa Bojongsoang')
+                    .openPopup();
+
+                L.marker([-6.974774405406255, 107.63958990948215]).addTo(map)
+                    .bindPopup('Kantor Desa Lengkong')
+                    .openPopup();
+
+                L.marker([-7.000795164946833, 107.64788692112525]).addTo(map)
+                    .bindPopup('Kantor Desa Bojongsari')
+                    .openPopup();
+
+                L.marker([-6.967001348033594, 107.63735957879616]).addTo(map)
+                    .bindPopup('Kantor Desa Cipagalo')
+                    .openPopup();
+                
+                L.marker([-6.982947614005201, 107.69391788064658]).addTo(map)
+                    .bindPopup('Kantor Desa Tegalluar')
+                    .openPopup();
+                
+                L.marker([-6.976148501732319, 107.67153939088546]).addTo(map)
+                    .bindPopup('Kantor Desa Buah Batu')
+                    .openPopup();
+
+                
+            </script>
+
+            <!--iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe-->
             <!-- <div class="info mt-4">
               <i class="bi bi-geo-alt"></i>
               <h4>Location:</h4>
