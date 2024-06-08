@@ -10,7 +10,9 @@ class Pengaduan extends Model
     use HasFactory;
 
     protected $guarderd = ['id'];
+    
     protected $table = 'pengaduan';
+
     protected $fillable = [
         'nik',
         'nama',

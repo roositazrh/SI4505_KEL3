@@ -12,12 +12,14 @@ class AdminController extends Controller
         echo "Halaman Admin";
         echo "<h1>" . Auth::user()->name . "</h1>";
         echo "<a href='/logout'>Logout</a>";
+        return redirect('/');
     }
     function koperasi()
     {
         echo "Halaman koperasi";
         echo "<h1>" . Auth::user()->name . "</h1>";
         echo "<a href='/logout'>Logout</a>";
+        return redirect('/');
     }
     function user()
     {

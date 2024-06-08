@@ -31,7 +31,7 @@ class AuthController extends Controller
         return view('detailartikel');
     }
 
-    
+
     function detailgaleri()
     {
         return view('detailgaleri');
@@ -77,7 +77,7 @@ class AuthController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('');
+        return redirect('/');
     }
 
     function register()
