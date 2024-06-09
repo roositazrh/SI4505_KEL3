@@ -5,19 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Artikel extends Model
+class Galeri extends Model
 {
     use HasFactory;
 
     protected $guarderd = ['id'];
 
     protected $fillable = [
-        'title',
+        'nama_desa',
         'slug',
-        'author',
-        'thumbnail',
+        'alamat',
+        'provinsi',
+        'sumber_daya',
         'img_source',
+        'lintang',
+        'bujur',
         'tanggal_publish',
-        'body',
+        'deskripsi_desa',
     ];
 }
+

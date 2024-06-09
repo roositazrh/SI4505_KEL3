@@ -45,18 +45,18 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <h1 class="text-light"><a href="{{route('landing')}}"><span>AGRIMAP</span></a></h1>
+          <h1 class="text-light"><a href="{{route('home')}}"><span>AGRIMAP</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link" href="{{route('landing')}}#hero">Home</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#services">Layanan</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#portfolio">Galeri</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#hero">Home</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#services">Layanan</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#portfolio">Galeri</a></li>
             <li><a class="nav-link" href="{{route('pengaduan')}}">Pengaduan</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#contact">Peta</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#contact">Peta</a></li>
             <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
             <li><a class="getstarted scrollto" href="{{route('login')}}">Login</a></li>
           </ul>
@@ -85,35 +85,40 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
 
-        <div class="section-title" data-aos="fade-left">
-          <h2>Artikel Desa</h2>
-          <p>Artikel - artikel dari berbagai desa</p>
-        </div>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-            @foreach ($artikels as $artikel)
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img href="{{ $artikels->thumbnail }}" class="img-fluid" alt="Thumbnail">
-                <div class="portfolio-info">
-                  <h4>{{ $artikels->title }}</h4>
-                  <div class="portfolio-links">
-                    <a href="{{ $artikels->thumbnail }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                    <a href="{{route('detailartikel')}}" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
+      <div class="section-title" data-aos="fade-left">
+        <h2>Artikel Desa</h2>
+        <p>Artikel - artikel dari berbagai desa</p>
+      </div>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          @foreach ($artikels as $artikel)
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <div class="fixed-box"> <!-- Add fixed-box class here -->
+                <a href="{{ $artikel->thumbnail }}">
+                  <img src="{{ $artikel->img_source }}" class="img-fluid fixed-size" alt="Thumbnail for {{ $artikel->title }}" border="0" />
+                </a>
+              </div>
+              <div class="portfolio-info">
+                <h4>{{ $artikel->title }}</h4>
+                <div class="portfolio-links">
+                  <a href="{{ $artikel->thumbnail }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $artikel->title }}"><i class="bx bx-plus"></i></a>
+                  <a href="{{ route('artikel.show', $artikel->slug) }}" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
-            @endforeach
-        </div>
-
-
+          </div>
+          @endforeach
       </div>
-    </section><!-- End Portfolio Section -->
+
+    </div>
+  </section><!-- End Portfolio Section -->
+
     </section>
 
   </main><!-- End #main -->

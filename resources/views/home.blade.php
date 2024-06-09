@@ -56,7 +56,7 @@
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
 
-          <h1 class="text-light"><a href="{{route('landing')}}"><span>AGRIMAP</span></a></h1>
+          <h1 class="text-light"><a href="{{route('home')}}"><span>AGRIMAP</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -336,30 +336,35 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Indonesia Barat</li>
-              <li data-filter=".filter-card">Indonesia Tengah</li>
-              <li data-filter=".filter-web">Indonesia Timur</li>
+              <li data-filter=".barat">Bandung Barat</li>
+              <li data-filter=".selatan">Bandung Selatan</li>
+              <li data-filter=".timur">Bandung Timur</li>
+              <li data-filter=".utara">Bandung Utara</li>
             </ul>
           </div>
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{asset('land-bt/assets/img/portfolio/1.jpg')}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Desa Durian</h4>
-                <p>Desa dengan 1000 Durian</p>
-                <div class="portfolio-links">
-                  <a href="{{asset('land-bt/assets/img/portfolio/1.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <!-- Iterasi semua galeri -->
+            @foreach($galeris as $galeri)
+            <div class="col-lg-4 col-md-6 portfolio-item {{ $galeri->provinsi }}">
+                <div class="portfolio-wrap">
+                    <div class="fixed-box">
+                        <img src="{{ $galeri->img_source }}" class="img-fluid fixed-size" alt="">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>{{ $galeri->nama_desa }}</h4>
+                        <div class="portfolio-links">
+                            <a href="{{ $galeri->sumber_daya }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                            <a href="{{ route('galeri.show', $galeri->slug) }}" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            @endforeach
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+
+          {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{{asset('land-bt/assets/img/portfolio/2.png')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -469,7 +474,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 
@@ -669,43 +674,56 @@
           </div>
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            
+
             <!-- Div for the map -->
-    <div id="map"></div>
+        <div id="map">
+        </div>
+
             <!-- Leaflet JS code -->
             <script>
+                var map = L.map('map').setView([51.505, -0.09], 13);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                @foreach($galeris as $galeri)
+                    L.marker([-{{ $galeri->lintang }}, {{ $galeri->bujur }}]).addTo(map)
+                        .bindPopup("{{ $galeri->nama_desa }}. <a href='{{ route('galeri.show', $galeri->slug) }}'>detail desa</a>")
+                        .openPopup();
+                @endforeach
+            </script>
+
+            {{-- <script>
                 var map = L.map('map').setView([51.505, -0.09], 13);
 
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
-
-                L.marker([-6.983052733181229, 107.63164206530367]).addTo(map)
-                    .bindPopup('Kantor Desa Bojongsoang')
+                L.marker([-{{ $galeri->lintang }}, {{ $galeri->bujur }}]).addTo(map)
+                    .bindPopup("{{ $galeri->nama_desa }}. <a href='{{ route('galeri.show', $galeri->slug) }}'>detail desa</a>")
                     .openPopup();
 
-                L.marker([-6.974774405406255, 107.63958990948215]).addTo(map)
-                    .bindPopup('Kantor Desa Lengkong')
-                    .openPopup();
+                // L.marker([-6.974774405406255, 107.63958990948215]).addTo(map)
+                //     .bindPopup('Kantor Desa Lengkong')
+                //     .openPopup();
 
-                L.marker([-7.000795164946833, 107.64788692112525]).addTo(map)
-                    .bindPopup('Kantor Desa Bojongsari')
-                    .openPopup();
+                // L.marker([-7.000795164946833, 107.64788692112525]).addTo(map)
+                //     .bindPopup('Kantor Desa Bojongsari')
+                //     .openPopup();
 
-                L.marker([-6.967001348033594, 107.63735957879616]).addTo(map)
-                    .bindPopup('Kantor Desa Cipagalo')
-                    .openPopup();
-                
-                L.marker([-6.982947614005201, 107.69391788064658]).addTo(map)
-                    .bindPopup('Kantor Desa Tegalluar')
-                    .openPopup();
-                
-                L.marker([-6.976148501732319, 107.67153939088546]).addTo(map)
-                    .bindPopup('Kantor Desa Buah Batu')
-                    .openPopup();
+                // L.marker([-6.967001348033594, 107.63735957879616]).addTo(map)
+                //     .bindPopup('Kantor Desa Cipagalo')
+                //     .openPopup();
 
-                
-            </script>
+                // L.marker([-6.982947614005201, 107.69391788064658]).addTo(map)
+                //     .bindPopup('Kantor Desa Tegalluar')
+                //     .openPopup();
+
+                // L.marker([-6.976148501732319, 107.67153939088546]).addTo(map)
+                //     .bindPopup('Kantor Desa Buah Batu')
+                //     .openPopup();
+
+
+            </script> --}}
 
             <!--iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe-->
             <!-- <div class="info mt-4">
@@ -787,7 +805,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              
+
               <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Galeri</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('artikel')}}">Artikel</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>

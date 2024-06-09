@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PengaduanController;
 use Filament\Forms\Get;
@@ -21,8 +22,8 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
     Route::get('/artikel/{artikel:slug}', [ArtikelController::class, 'show'])->name('artikel.show');
 
-
-    Route::get('/detailgaleri', [AuthController::class, 'detailgaleri'])->name('detailgaleri');
+    Route::get('/', [GaleriController::class, 'index'])->name('home');
+    Route::get('/galeri/{galeri:slug}', [GaleriController::class, 'show'])->name('galeri.show');
 });
 
 

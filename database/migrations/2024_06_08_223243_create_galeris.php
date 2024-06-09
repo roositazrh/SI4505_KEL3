@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artikels', function (Blueprint $table) {
+        Schema::create('galeris', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('nama_desa');
             $table->string('slug');
-            $table->string('author');
-            $table->text('thumbnail');
+            $table->text('alamat');
+            $table->string('provinsi');
+            $table->text('sumber_daya');
+            $table->text('img_source');
+            $table->decimal('lintang', 9, 6);
+            $table->decimal('bujur', 9, 6);
             $table->dateTime('tanggal_publish');
-            $table->longText('body');
+            $table->longText('deskripsi_desa');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artikel');
+        Schema::dropIfExists('galeris');
     }
 };

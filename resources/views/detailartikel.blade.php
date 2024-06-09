@@ -37,18 +37,18 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <h1 class="text-light"><a href="{{route('landing')}}"><span>AGRIMAP</span></a></h1>
+          <h1 class="text-light"><a href="{{route('home')}}"><span>AGRIMAP</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link" href="{{route('landing')}}#hero">Home</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#services">Layanan</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#portfolio">Galeri</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#hero">Home</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#services">Layanan</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#portfolio">Galeri</a></li>
             <li><a class="nav-link" href="{{route('pengaduan')}}">Pengaduan</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#contact">Peta</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#contact">Peta</a></li>
             <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
             <li><a class="getstarted scrollto" href="{{route('login')}}">Login</a></li>
           </ul>
@@ -77,53 +77,40 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= INI ISINYA THUMBNAIL ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
-
+<!-- ======= INI ISINYA THUMBNAIL ======= -->
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+      @foreach($related_artikels as $related_artikel)
+      <div class="row gy-4">
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide">
+                <a href="{{ $related_artikel->thumbnail }}">
+                  <img src="{{ $related_artikel->img_source }}" alt="Image for {{ $related_artikel->title }}" border="0" />
+                </a>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>JUDUL ARTIKEL</h3>
-              <ul>
-                <li><strong>AUTHOR</strong>: ASU Company</li>
-                <li><strong>TANGGAL</strong>: 01 March, 2020</li>
-
-              </ul>
-            </div>
-            <div class="portfolio-description">
-
-              <p>
-                ini isi dari artikel
-            </div>
-          </div>
-
         </div>
-
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>{{ $related_artikel->title }}</h3>
+            <ul>
+              <li><strong>AUTHOR</strong>: {{ $related_artikel->author }}</li>
+              <li><strong>TANGGAL</strong>: {{ $related_artikel->tanggal_publish }}</li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <p>{!! $related_artikel->body !!}</p>
+          </div>
+        </div>
       </div>
-    </section><!-- End Portfolio Details Section -->
+      @endforeach
+    </div>
+  </section><!-- End Portfolio Details Section -->
+
 
   </main><!-- End #main -->
 
@@ -149,7 +136,7 @@
         <h4>Useful Links</h4>
         <ul>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-          
+
           <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Galeri</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="{{route('artikel')}}">Artikel</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
