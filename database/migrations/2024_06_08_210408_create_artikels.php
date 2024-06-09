@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('author');
-            $table->text('thumbnail');
             $table->text('img_source');
             $table->dateTime('tanggal_publish');
             $table->longText('body');

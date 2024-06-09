@@ -100,9 +100,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <div class="fixed-box"> <!-- Add fixed-box class here -->
-                <a href="{{ $artikel->thumbnail }}">
                   <img src="{{ $artikel->img_source }}" class="img-fluid fixed-size" alt="Thumbnail for {{ $artikel->title }}" border="0" />
-                </a>
               </div>
               <div class="portfolio-info">
                 <h4>{{ $artikel->title }}</h4>
