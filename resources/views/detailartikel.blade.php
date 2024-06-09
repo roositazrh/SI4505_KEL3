@@ -86,9 +86,7 @@
           <div class="portfolio-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
               <div class="swiper-slide">
-                <a href="{{ $related_artikel->thumbnail }}">
                   <img src="{{ $related_artikel->img_source }}" alt="Image for {{ $related_artikel->title }}" border="0" />
-                </a>
               </div>
             </div>
             <div class="swiper-pagination"></div>

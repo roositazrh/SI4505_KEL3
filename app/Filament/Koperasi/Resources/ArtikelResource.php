@@ -45,8 +45,6 @@ class ArtikelResource extends Resource
                 TextInput::make('author')
                     ->required()
                     ->maxLength(255),
-                TextInput::make('thumbnail')
-                    ->required(),
                 TextInput::make('img_source')
                     ->required(),
                 DateTimePicker::make('tanggal_publish')

@@ -15,7 +15,6 @@ class Artikel extends Model
         'title',
         'slug',
         'author',
-        'thumbnail',
         'img_source',
         'tanggal_publish',
         'body',
