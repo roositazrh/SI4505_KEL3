@@ -9,16 +9,14 @@ class ArtikelController extends Controller
 {
     public function index()
     {
-        $artikels = Artikel::get();
-
+        $artikels = Artikel::all();
         return view('artikel', compact('artikels'));
     }
 
     public function show(Artikel $artikel)
     {
-        $artikels = Artikel::get();
-        $related_artikels = Artikel::get();
-
+        $related_artikels = Artikel::where('slug', '=', $artikel->slug)->get();
         return view('detailartikel', compact('artikel', 'related_artikels'));
     }
 }
+

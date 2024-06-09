@@ -44,18 +44,18 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <h1 class="text-light"><a href="{{route('landing')}}"><span>AGRIMAP</span></a></h1>
+          <h1 class="text-light"><a href="{{route('home')}}"><span>AGRIMAP</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link" href="{{route('landing')}}#hero">Home</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#services">Layanan</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#portfolio">Galeri</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#hero">Home</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#services">Layanan</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#portfolio">Galeri</a></li>
             <li><a class="nav-link" href="{{route('pengaduan')}}">Pengaduan</a></li>
-            <li><a class="nav-link" href="{{route('landing')}}#contact">Peta</a></li>
+            <li><a class="nav-link" href="{{route('home')}}#contact">Peta</a></li>
             <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
             <li><a class="getstarted scrollto" href="{{route('login')}}">Login</a></li>
           </ul>
@@ -86,7 +86,7 @@
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
-
+        @foreach($related_galeris as $related_galeri)
         <div class="row gy-4">
 
           <div class="col-lg-8">
@@ -94,16 +94,16 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                  <img src="{{ $related_galeri->img_source }}" alt="">
                 </div>
-
+{{--
                 <div class="swiper-slide">
                   <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
                   <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
+                </div> --}}
 
               </div>
               <div class="swiper-pagination"></div>
@@ -112,24 +112,24 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Informasi Desa</h3>
+              <h3>INFORMASI DESA</h3>
               <ul>
-                <li><strong>Nama Desa</strong>: Web design</li>
-                <li><strong>Alamat Kantor Desa</strong>: ASU Company</li>
-                <li><strong>Provinsi</strong>: 01 March, 2020</li>
-                <li><strong>Sumber daya Desa </strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Nama Desa</strong>: {{ $related_galeri->nama_desa }}</li>
+                <li><strong>Alamat Kantor Desa</strong>: {{ $related_galeri->alamat }}</li>
+                <li><strong>Provinsi</strong>: Bandung {{ $related_galeri->provinsi }}</li>
+                <li><strong>Sumber daya Desa </strong>: <a href="#">{{ $related_galeri->sumber_daya }}</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Deskripsi Desa</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {!! $related_galeri->deskripsi_desa !!}
               </p>
             </div>
           </div>
 
         </div>
-
+        @endforeach
       </div>
     </section><!-- End Portfolio Details Section -->
 
@@ -157,7 +157,7 @@
         <h4>Useful Links</h4>
         <ul>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-          
+
           <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Galeri</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="{{route('artikel')}}">Artikel</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>

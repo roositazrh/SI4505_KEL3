@@ -146,7 +146,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -275,7 +275,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -967,6 +967,18 @@ section {
   border: 4px solid #fff;
   margin: 0 auto;
 }
+
+.fixed-box {
+    width: 500px; /* Set your desired width for the box */
+    height: 300px; /* Set your desired height for the box */
+  }
+
+  .fixed-size {
+    width: 100%; /* Make the image take full width of the box */
+    height: 100%; /* Make the image take full height of the box */
+    object-fit: cover; /* This ensures the image covers the entire area without distortion */
+  }
+
 
 .testimonials .testimonial-item h3 {
   font-size: 18px;
