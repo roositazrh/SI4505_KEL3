@@ -57,7 +57,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName('Admin Panel')
+            ->brandName('Panel Admin')
             ->defaultThemeMode(ThemeMode::Light);
     }
 }

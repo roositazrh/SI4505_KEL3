@@ -33,9 +33,6 @@ class KoperasiPanelProvider extends PanelProvider
             ])
             ->discoverResources(in: app_path('Filament/Koperasi/Resources'), for: 'App\\Filament\\Koperasi\\Resources')
             ->discoverPages(in: app_path('Filament/Koperasi/Pages'), for: 'App\\Filament\\Koperasi\\Pages')
-            ->pages([
-                Pages\Dashboard::class,
-            ])
             ->discoverWidgets(in: app_path('Filament/Koperasi/Widgets'), for: 'App\\Filament\\Koperasi\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -55,7 +52,7 @@ class KoperasiPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName('Koperasi Panel')
+            ->brandName('Panel Koperasi')
             ->defaultThemeMode(ThemeMode::Light);
     }
 }

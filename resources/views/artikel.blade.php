@@ -164,9 +164,6 @@
       <div class="col-lg-4 col-md-6 footer-newsletter">
         <h4>Artikel Kami</h4>
         <p>Lihat berita terbaru dari berbagai desa di Indonesia</p>
-        <form action="" method="post">
-          <input type="email" name="email"><input type="submit" value="Log In">
-        </form>
       </div>
 
     </div>
