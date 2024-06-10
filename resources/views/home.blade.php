@@ -668,8 +668,11 @@
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
             <div class="peta">
+
               <h2>Peta Wilayah</h2>
               <p>Peta ini dirancang untuk memudahkan penduduk lokal, pengunjung, dan pihak-pihak berkepentingan lainnya dalam memahami letak geografis</p>
+
+
             </div>
           </div>
 
