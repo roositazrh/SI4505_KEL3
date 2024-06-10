@@ -107,3 +107,33 @@ button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
 }
+
+.back-btn {
+    text-decoration: none;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-btn i {
+    margin-right: 8px;
+}
+
+.back-btn:hover {
+    background-color: #912121;
+    box-shadow: 0 4px 12px rgba(145, 33, 33, 0.2);
+}
+
+.back-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(174, 39, 39, 0.3);
+}

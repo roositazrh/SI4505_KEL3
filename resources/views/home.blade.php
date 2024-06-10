@@ -68,7 +68,7 @@
             <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
             <li><a class="nav-link scrollto " href="#portfolio">Galeri</a></li>
             <li><a class="nav-link" href="{{route('pengaduan')}}">Pengaduan</a></li>
-            <li><a class="nav-link scrollto" href="#contact">Peta</a></li>
+            <li><a class="nav-link scrollto" href="#peta">Peta</a></li>
             <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
             <li><a class="getstarted scrollto" href="{{route('login')}}">Login</a></li>
 
@@ -261,7 +261,7 @@
         <div class="text-center" data-aos="zoom-in">
           <h3>Peta Wilayah</h3>
           <p> Temukan lokasi sumber daya alam, seperti hutan, sungai, dan lahan pertanian, serta informasi terkait keberlanjutan dan ketersediaannya.</p>
-          <a class="cta-btn" href="#contact">Temukan (Scroll Ke Bawah)</a>
+          <a class="cta-btn" href="#peta">Temukan (Scroll Ke Bawah)</a>
         </div>
 
       </div>
@@ -311,7 +311,7 @@
               <div class="col-md-6 d-flex align-items-stretch mt-4">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
                   <!-- <div class="icon"><i class="bx bx-world"></i></div> -->
-                  <h4><a href="#contact">Peta penyediaan sumber daya alam</a></h4>
+                  <h4><a href="#peta">Peta penyediaan sumber daya alam</a></h4>
                   <p>memungkinkan pengguna untuk menemukan lokasi sumber daya alam, seperti hutan, sungai, dan lahan pertanian, serta informasi terkait keberlanjutan dan ketersediaannya.</p>
                 </div>
               </div>
@@ -663,7 +663,7 @@
     <!-- End Team Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <section id="peta" class="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
@@ -690,8 +690,8 @@
                 }).addTo(map);
                 @foreach($galeris as $galeri)
                     L.marker([-{{ $galeri->lintang }}, {{ $galeri->bujur }}]).addTo(map)
-                        .bindPopup("{{ $galeri->nama_desa }}. <a href='{{ route('galeri.show', $galeri->slug) }}'>detail desa</a>")
-                        .openPopup();
+                    .bindPopup("{{ $galeri->nama_desa }},<br>Bandung {{ ucwords($galeri->provinsi) }}<br><a href='{{ route('galeri.show', $galeri->slug) }}'>klik disini</a>")
+                    .openPopup();
                 @endforeach
             </script>
 
@@ -820,7 +820,7 @@
             <ul>
 
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('pengaduan')}}">Lapak Pengaduan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Peta Sumber daya</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#peta">Peta Sumber daya</a></li>
 
               <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
             </ul>

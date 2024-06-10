@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -28,7 +29,7 @@ class KoperasiPanelProvider extends PanelProvider
             ->path('koperasi')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#009970',
             ])
             ->discoverResources(in: app_path('Filament/Koperasi/Resources'), for: 'App\\Filament\\Koperasi\\Resources')
             ->discoverPages(in: app_path('Filament/Koperasi/Pages'), for: 'App\\Filament\\Koperasi\\Pages')
@@ -53,6 +54,8 @@ class KoperasiPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->brandName('Koperasi Panel')
+            ->defaultThemeMode(ThemeMode::Light);
     }
 }

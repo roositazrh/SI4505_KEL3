@@ -116,7 +116,7 @@
               <ul>
                 <li><strong>Nama Desa</strong>: {{ $related_galeri->nama_desa }}</li>
                 <li><strong>Alamat Kantor Desa</strong>: {{ $related_galeri->alamat }}</li>
-                <li><strong>Provinsi</strong>: Bandung {{ $related_galeri->provinsi }}</li>
+                <li><strong>Provinsi</strong>: Bandung {{ ucwords($related_galeri->provinsi) }}</li>
                 <li><strong>Sumber daya Desa </strong>: <a href="#">{{ $related_galeri->sumber_daya }}</a></li>
               </ul>
             </div>
