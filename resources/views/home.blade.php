@@ -176,7 +176,7 @@
       <div class="container">
 
         <div class="row counters">
-            <h3>Data pengguna Website (ini belom di ke tengah in)</h3>
+            <h3>Data pengguna Website</h3>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
@@ -668,8 +668,8 @@
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
             <div class="peta">
-              <h2>Peta Wilayah (SPRINT 3) GA PEDE JAN DIAPA APAIN DULU</h2>
-              <p>Ini Sprint 3, sementara ini dulu. ini nyoba doang.</p>
+              <h2>Peta Wilayah Desa</h2>
+              <p>Peta Wilayah berbagai desa di Indonesia</p>
             </div>
           </div>
 
