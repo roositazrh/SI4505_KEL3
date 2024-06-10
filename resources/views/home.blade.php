@@ -363,7 +363,6 @@
             </div>
             @endforeach
 
-
           {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{{asset('land-bt/assets/img/portfolio/2.png')}}" class="img-fluid" alt="">
@@ -475,9 +474,7 @@
               </div>
             </div>
           </div> --}}
-
         </div>
-
       </div>
     </section><!-- End Portfolio Section -->
 
@@ -684,7 +681,7 @@
 
             <!-- Leaflet JS code -->
             <script>
-                var map = L.map('map').setView([51.505, -0.09], 13);
+                var map = L.map('map').setView([-6.903, 107.616], 11);
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
@@ -829,9 +826,6 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Artikel Kami</h4>
             <p>Lihat berita terbaru dari berbagai desa di Indonesia</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Log In">
-            </form>
           </div>
 
         </div>

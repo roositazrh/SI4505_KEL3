@@ -76,7 +76,8 @@ class ArtikelResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(50),
                 TextColumn::make('author'),
                 TextColumn::make('tanggal_publish')
                     ->dateTime()

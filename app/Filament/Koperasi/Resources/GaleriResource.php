@@ -87,7 +87,8 @@ class GaleriResource extends Resource
             ->columns([
                 TextColumn::make('nama_desa')
                     ->searchable(),
-                TextColumn::make('alamat'),
+                TextColumn::make('alamat')
+                    ->limit(50),
                 TextColumn::make('provinsi'),
                 TextColumn::make('sumber_daya'),
             ])
