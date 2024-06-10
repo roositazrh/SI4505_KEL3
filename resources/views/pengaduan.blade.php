@@ -35,6 +35,7 @@
                     <textarea type= "text" id="pengaduan" name="detail_pengaduan" rows="4"></textarea>
                 </div>
                 <button name="submit" type="submit"><i class="fas fa-paper-plane"></i> Kirim Pengaduan</button>
+                <a href="{{ route('home') }}" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
             </form>
         </div>
     </div>
