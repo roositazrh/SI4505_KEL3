@@ -47,6 +47,7 @@ class PengaduanResource extends Resource
                 TextColumn::make('nama'),
                 TextColumn::make('email'),
                 TextColumn::make('no_telp'),
+                TextColumn::make('detail_pengaduan')->limit(50),
             ])
             ->filters([
                 //
