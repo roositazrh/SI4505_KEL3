@@ -668,9 +668,11 @@
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
             <div class="peta">
-              <h2>Peta Wilayah Desa</h2>
-              <p>Peta ini dirancang untuk memudahkan penduduk lokal, pengunjung, dan pihak-pihak berkepentingan lainnya dalam memahami letak geografis desa desa.
-</p>
+
+              <h2>Peta Wilayah</h2>
+              <p>Peta ini dirancang untuk memudahkan penduduk lokal, pengunjung, dan pihak-pihak berkepentingan lainnya dalam memahami letak geografis</p>
+
+
             </div>
           </div>
 
@@ -703,28 +705,8 @@
                     .bindPopup("{{ $galeri->nama_desa }}. <a href='{{ route('galeri.show', $galeri->slug) }}'>detail desa</a>")
                     .openPopup();
 
-                // L.marker([-6.974774405406255, 107.63958990948215]).addTo(map)
-                //     .bindPopup('Kantor Desa Lengkong')
-                //     .openPopup();
 
-                // L.marker([-7.000795164946833, 107.64788692112525]).addTo(map)
-                //     .bindPopup('Kantor Desa Bojongsari')
-                //     .openPopup();
-
-                // L.marker([-6.967001348033594, 107.63735957879616]).addTo(map)
-                //     .bindPopup('Kantor Desa Cipagalo')
-                //     .openPopup();
-
-                // L.marker([-6.982947614005201, 107.69391788064658]).addTo(map)
-                //     .bindPopup('Kantor Desa Tegalluar')
-                //     .openPopup();
-
-                // L.marker([-6.976148501732319, 107.67153939088546]).addTo(map)
-                //     .bindPopup('Kantor Desa Buah Batu')
-                //     .openPopup();
-
-
-            </script> --}}
+            </script> --}}-->
 
             <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe-->
             <!-- <div class="info mt-4">
