@@ -669,7 +669,8 @@
           <div class="col-lg-4" data-aos="fade-right">
             <div class="peta">
               <h2>Peta Wilayah Desa</h2>
-              <p>Peta Wilayah berbagai desa di Indonesia</p>
+              <p>Peta ini dirancang untuk memudahkan penduduk lokal, pengunjung, dan pihak-pihak berkepentingan lainnya dalam memahami letak geografis desa desa.
+</p>
             </div>
           </div>
 
