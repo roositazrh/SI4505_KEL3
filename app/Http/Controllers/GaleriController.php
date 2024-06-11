@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Galeri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GaleriController extends Controller
 {
     public function index()
     {
         $galeris = Galeri::all();
-        return view('home', compact('galeris'));
+        $count_galeris = DB::table('galeris')->count();
+        $count_artikels = DB::table('artikels')->count();
+        $count_pengaduans = DB::table('pengaduan')->count();
+        return view('home', compact('galeris', 'count_galeris', 'count_artikels', 'count_pengaduans'));
     }
 
     public function show(Galeri $galeri)

@@ -23,5 +23,7 @@ class Galeri extends Model
         'tanggal_publish',
         'deskripsi_desa',
     ];
+
+    protected static ?string $navigationLabel = 'Galeri';
 }
 
