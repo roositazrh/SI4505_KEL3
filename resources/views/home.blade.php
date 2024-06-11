@@ -176,21 +176,21 @@
       <div class="container">
 
         <div class="row counters">
-            <h3>Data pengguna Website</h3>
+            <h3 style="text-align: center; width: 100%;">Data pengguna Website</h3>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="{{ $count_galeris }}" data-purecounter-duration="1" class="purecounter"></span>
             <p>Desa</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Kabupaten</p>
+            <span data-purecounter-start="0" data-purecounter-end="{{ $count_artikels }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Artikel</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Provinsi</p>
+            <span data-purecounter-start="0" data-purecounter-end="{{ $count_pengaduans }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Jumlah Pengaduan</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
