@@ -59,7 +59,9 @@
     ini nyoba create branch from
 
     Halo apa kabar semuanya
-    
+
+    nyoba checkout
+
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container">
@@ -186,7 +188,7 @@
                                 L.marker([-{{ $related_galeri->lintang }}, {{ $related_galeri->bujur }}]).addTo(map)
                                     .bindPopup(
                                         "{{ $related_galeri->nama_desa }}, <br>{{ $related_galeri->alamat }},<br>Bandung {{ ucwords($related_galeri->provinsi) }}"
-                                        )
+                                    )
                                     .openPopup();
                             @endforeach
                         </script>
